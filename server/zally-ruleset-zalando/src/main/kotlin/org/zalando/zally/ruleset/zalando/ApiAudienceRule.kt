@@ -11,7 +11,7 @@ import org.zalando.zally.rule.api.Violation
 @Rule(
     ruleSet = ZalandoRuleSet::class,
     id = "219",
-    severity = Severity.MUST,
+    severity = Severity.MAY,
     title = "Provide API Audience"
 )
 class ApiAudienceRule(rulesConfig: Config) {
@@ -22,7 +22,7 @@ class ApiAudienceRule(rulesConfig: Config) {
     private val extensionName = "x-audience"
     private val extensionPointer = "/info/$extensionName".toJsonPointer()
 
-    @Check(severity = Severity.MUST)
+    @Check(severity = Severity.MAY)
     fun validate(context: Context): Violation? {
         val audience = context.api.info?.extensions?.get(extensionName)
 

@@ -11,7 +11,7 @@ import org.zalando.zally.rule.api.Violation
 @Rule(
     ruleSet = ZalandoRuleSet::class,
     id = "118",
-    severity = Severity.MUST,
+    severity = Severity.HINT,
     title = "Property Names Must be ASCII snake_case"
 )
 class SnakeCaseInPropNameRule(config: Config) {
@@ -19,7 +19,7 @@ class SnakeCaseInPropNameRule(config: Config) {
 
     private val checker = CaseChecker.load(config)
 
-    @Check(severity = Severity.MUST)
+    @Check(severity = Severity.HINT)
     fun checkPropertyNames(context: Context): List<Violation> =
         checker.checkPropertyNames(context).map { Violation(description, it.pointer) }
 }

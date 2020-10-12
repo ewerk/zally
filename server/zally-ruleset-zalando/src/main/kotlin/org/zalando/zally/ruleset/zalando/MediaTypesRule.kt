@@ -17,7 +17,7 @@ import io.swagger.v3.oas.models.responses.ApiResponse
 @Rule(
     ruleSet = ZalandoRuleSet::class,
     id = "172",
-    severity = Severity.SHOULD,
+    severity = Severity.MUST,
     title = "Prefer standard media type names"
 )
 class MediaTypesRule {
@@ -33,7 +33,7 @@ class MediaTypesRule {
         "application/merge-patch+json"
     )
 
-    @Check(severity = Severity.SHOULD)
+    @Check(severity = Severity.MUST)
     fun validate(context: Context): List<Violation> =
         context.api.mediaTypes()
             .filterNot { (type, _) -> isStandardJsonMediaType(type) }

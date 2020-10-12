@@ -11,14 +11,14 @@ import io.swagger.v3.oas.models.parameters.Parameter
 @Rule(
     ruleSet = ZalandoRuleSet::class,
     id = "154",
-    severity = Severity.SHOULD,
+    severity = Severity.MUST,
     title = "Use and Specify Explicitly the Form-Style Query Format for Collection Parameters"
 )
 class QueryParameterCollectionFormatRule {
     private val allowedStyle = Parameter.StyleEnum.FORM
     private val description = "Parameter style have to be `form`"
 
-    @Check(severity = Severity.SHOULD)
+    @Check(severity = Severity.MUST)
     fun checkParametersCollectionFormat(context: Context): List<Violation> =
         if (context.isOpenAPI3())
             context.api.getAllParameters().values

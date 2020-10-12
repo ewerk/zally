@@ -11,14 +11,14 @@ import org.zalando.zally.ruleset.zalando.util.WordUtil.isPlural
 @Rule(
     ruleSet = ZalandoRuleSet::class,
     id = "120",
-    severity = Severity.SHOULD,
+    severity = Severity.MUST,
     title = "Array names should be pluralized"
 )
 class PluralizeNamesForArraysRule {
 
     val description = "Array property name appears to be singular"
 
-    @Check(severity = Severity.SHOULD)
+    @Check(severity = Severity.MUST)
     fun checkArrayPropertyNamesArePlural(context: Context): List<Violation> =
         context.api.getAllSchemas()
             .flatMap { it.properties.orEmpty().entries }
