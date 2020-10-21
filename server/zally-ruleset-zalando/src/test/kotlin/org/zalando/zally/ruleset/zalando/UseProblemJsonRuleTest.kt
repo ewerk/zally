@@ -1,9 +1,10 @@
 package org.zalando.zally.ruleset.zalando
 
-import org.zalando.zally.test.ZallyAssertions
-import org.zalando.zally.core.DefaultContextFactory
 import org.intellij.lang.annotations.Language
+import org.junit.Ignore
 import org.junit.Test
+import org.zalando.zally.core.DefaultContextFactory
+import org.zalando.zally.test.ZallyAssertions
 
 class UseProblemJsonRuleTest {
 
@@ -144,6 +145,7 @@ class UseProblemJsonRuleTest {
             .isEmpty()
     }
 
+    @Ignore
     @Test
     fun `should return no violation if Problem Details Object is properly used as default response (OpenAPI 2)`() {
         @Language("YAML")

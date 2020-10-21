@@ -6,8 +6,8 @@ import java.net.URI
 
 class EwerkRuleSet : AbstractRuleSet() {
 
-    override val url: URI = URI.create("https://zalando.github.io/restful-api-guidelines/")
+    override val url: URI = URI.create("https://confluence.it.ewerk.com/display/CUD/REST+APIs")
     override fun url(rule: Rule): URI {
-        return url.resolve("#${rule.id}")
+        return url
     }
 }
