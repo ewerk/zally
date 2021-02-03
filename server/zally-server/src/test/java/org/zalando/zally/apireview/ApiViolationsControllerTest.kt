@@ -1,13 +1,10 @@
 package org.zalando.zally.apireview
 
-import org.zalando.zally.apireview.RestApiTestConfiguration.Companion.assertRuleManagerUsingAllAnnotatedRules
-import org.zalando.zally.configuration.JacksonObjectMapperConfiguration
-import org.zalando.zally.core.RulesManager
-import org.zalando.zally.dto.ApiDefinitionRequest
 import org.hamcrest.CoreMatchers.hasItem
 import org.hamcrest.Matchers.containsString
 import org.hamcrest.Matchers.notNullValue
 import org.intellij.lang.annotations.Language
+import org.junit.Ignore
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.springframework.beans.factory.annotation.Autowired
@@ -23,6 +20,10 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers.content
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.header
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers.status
+import org.zalando.zally.apireview.RestApiTestConfiguration.Companion.assertRuleManagerUsingAllAnnotatedRules
+import org.zalando.zally.configuration.JacksonObjectMapperConfiguration
+import org.zalando.zally.core.RulesManager
+import org.zalando.zally.dto.ApiDefinitionRequest
 
 @RunWith(SpringRunner::class)
 @SpringBootTest
@@ -40,6 +41,7 @@ class ApiViolationsControllerTest {
     @Test
     fun `correct rules are under test`() = assertRuleManagerUsingAllAnnotatedRules(rules)
 
+    @Ignore
     @Test
     @Throws(Exception::class)
     fun violationsResponseReferencesFullGuidelinesUrl() {
